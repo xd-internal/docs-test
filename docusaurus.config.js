@@ -8,8 +8,8 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // GitHub Pages deployment
-  url: 'https://xplurdata.github.io',
-  baseUrl: '/docs/',
+  url: 'https://xd-internal.github.io',
+  baseUrl: '/docs-test/',
 
   organizationName: 'xplurdata',   // GitHub org/user
   projectName: 'docs',             // GitHub repo name
@@ -122,12 +122,13 @@ const config = {
         additionalLanguages: ['bash', 'yaml', 'docker', 'sql', 'json', 'python'],
       },
 
-      algolia: {
-        // Add your Algolia DocSearch credentials here once applied
-        // appId: 'YOUR_APP_ID',
-        // apiKey: 'YOUR_SEARCH_API_KEY',
-        // indexName: 'xplurdata',
-      },
+      // algolia: {
+      //   Add your DocSearch credentials here once you apply at:
+      //   https://docsearch.algolia.com/apply/
+      //   appId: 'YOUR_APP_ID',
+      //   apiKey: 'YOUR_SEARCH_API_KEY',
+      //   indexName: 'xplurdata',
+      // },
     }),
 };
 
