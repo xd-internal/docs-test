@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  # Allow manual trigger from Actions tab
   workflow_dispatch:
 
 permissions:
@@ -12,7 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -25,19 +23,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # Needed for showLastUpdateTime
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-          # No cache here — we generate the lock file in the next step
+          node-version: 20   # LTS — required for Docusaurus 3.7 + webpack compat
 
-      - name: Install dependencies and generate lock file
-        # npm install creates package-lock.json if missing, then installs.
-        # This avoids the "lock file not found" error when the repo has
-        # only package.json committed (common for new Docusaurus projects).
-        run: npm install
+      - name: Install dependencies
+        run: npm install    # generates lock file if missing, then installs
 
       - name: Build website
         run: npm run build
