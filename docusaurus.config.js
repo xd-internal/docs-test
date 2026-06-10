@@ -8,11 +8,14 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // GitHub Pages deployment
+  // ⚠️ Update when moving from test → production:
+  //   Production:  url: 'https://xplurdata.github.io',  baseUrl: '/docs/',         org: 'xplurdata',    project: 'docs'
+  //   Test repo:   url: 'https://xd-internal.github.io', baseUrl: '/docs-test/',   org: 'xd-internal',  project: 'docs-test'
   url: 'https://xd-internal.github.io',
   baseUrl: '/docs-test/',
 
-  organizationName: 'xplurdata',   // GitHub org/user
-  projectName: 'docs',             // GitHub repo name
+  organizationName: 'xd-internal',
+  projectName: 'docs-test',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
@@ -30,7 +33,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/xplurdata/docs/tree/main/',
+          editUrl: 'https://github.com/xd-internal/docs-test/tree/main/',
           // Versioning — enable once v1.0 is tagged
           // lastVersion: 'current',
           // versions: {
@@ -39,7 +42,7 @@ const config = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
-        blog: false, // No blog for now
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -123,8 +126,7 @@ const config = {
       },
 
       // algolia: {
-      //   Add your DocSearch credentials here once you apply at:
-      //   https://docsearch.algolia.com/apply/
+      //   Apply at https://docsearch.algolia.com/apply/ then fill in:
       //   appId: 'YOUR_APP_ID',
       //   apiKey: 'YOUR_SEARCH_API_KEY',
       //   indexName: 'xplurdata',
