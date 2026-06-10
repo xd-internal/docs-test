@@ -30,11 +30,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
+          node-version: 24
+          # No cache here — we generate the lock file in the next step
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies and generate lock file
+        # npm install creates package-lock.json if missing, then installs.
+        # This avoids the "lock file not found" error when the repo has
+        # only package.json committed (common for new Docusaurus projects).
+        run: npm install
 
       - name: Build website
         run: npm run build
